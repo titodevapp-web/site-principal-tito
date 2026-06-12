@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidade | Tito — O Organizador</title>
+<meta name="description" content="Política de Privacidade do Tito (tito.app.br): como coletamos, usamos, armazenamos, compartilhamos e protegemos seus dados, incluindo dados obtidos via APIs do Google. Conforme LGPD, GDPR e a Google API Services User Data Policy.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tito.app.br/privacidade">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: { extend: {
+    fontFamily: { sans:['Inter','sans-serif'], serif:['Playfair Display','serif'], display:['"Plus Jakarta Sans"','sans-serif'] },
+    colors: { pv: { orange:'#F97316', dark_orange:'#EA580C', light_orange:'#FB923C', black:'#000000', surface:'#1A1A1A', card:'#1F1F1F', border:'#2A2A2A', text:'#FAFAFA', muted:'#A3A3A3' } },
+  }}
+}
+</script>
+<style>
+:root{--bg-primary:#09090b;}
+*{box-sizing:border-box;}
+body{background:var(--bg-primary);color:#e4e4e7;font-family:'Inter',sans-serif;overflow-x:hidden;margin:0;line-height:1.7;}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:#000;}::-webkit-scrollbar-thumb{background:#2A2A2A;border-radius:4px;}
+.bg-mesh{position:fixed;inset:0;z-index:-2;pointer-events:none;background-image:radial-gradient(at 0% 0%,rgba(249,115,22,0.08) 0px,transparent 50%),radial-gradient(at 100% 100%,rgba(234,88,12,0.06) 0px,transparent 50%);filter:blur(60px);}
+.glass-panel{background:rgba(26,26,26,0.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08);}
+.text-gradient-orange{background:linear-gradient(135deg,#FB923C,#F97316,#EA580C);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.brand-dot{width:10px;height:10px;border-radius:50%;background:#F97316;box-shadow:0 0 10px #F97316;position:relative;display:inline-block;flex-shrink:0;}
+.brand-dot::after{content:'';position:absolute;inset:-4px;border:1px solid #F97316;border-radius:50%;opacity:.5;animation:pulseCircle 2s infinite;}
+@keyframes pulseCircle{0%{transform:scale(1);opacity:.8;}100%{transform:scale(1.7);opacity:0;}}
+
+/* Floating pill nav */
+#nav-pill{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:1000;width:92%;max-width:1100px;}
+#nav-inner{background:rgba(9,9,11,0.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:9999px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 20px 40px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.05);}
+
+/* Legal typography */
+.legal h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.5rem;color:#ffffff;letter-spacing:-0.5px;margin:48px 0 8px;scroll-margin-top:110px;}
+.legal h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.1rem;color:#fafafa;margin:28px 0 6px;}
+.legal p{color:#a1a1aa;margin:0 0 14px;}
+.legal ul{color:#a1a1aa;margin:0 0 14px;padding-left:22px;}
+.legal li{margin-bottom:8px;}
+.legal a{color:#FB923C;text-decoration:underline;text-underline-offset:2px;}
+.legal a:hover{color:#F97316;}
+.legal strong{color:#e4e4e7;font-weight:600;}
+.legal code{background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);color:#FB923C;border-radius:6px;padding:1px 7px;font-size:.85em;font-family:ui-monospace,monospace;}
+.callout{background:linear-gradient(145deg,rgba(249,115,22,0.08),rgba(26,26,26,0.4));border:1px solid rgba(249,115,22,0.25);border-radius:18px;padding:22px 24px;margin:24px 0;}
+.toc a{display:block;color:#a1a1aa;text-decoration:none;padding:6px 0;font-size:.9rem;border-bottom:1px solid rgba(255,255,255,0.04);transition:color .2s,padding-left .2s;}
+.toc a:hover{color:#FB923C;padding-left:6px;}
+table.legal-table{width:100%;border-collapse:collapse;margin:8px 0 20px;font-size:.9rem;}
+table.legal-table th,table.legal-table td{border:1px solid rgba(255,255,255,0.1);padding:10px 14px;text-align:left;vertical-align:top;}
+table.legal-table th{background:rgba(249,115,22,0.08);color:#fafafa;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;}
+table.legal-table td{color:#a1a1aa;}
+</style>
+</head>
+<body class="antialiased selection:bg-pv-orange/30 selection:text-white">
+<div class="bg-mesh"></div>
+
+<!-- NAV -->
+<div id="nav-pill">
+  <nav id="nav-inner">
+    <a href="/" class="flex items-center gap-3 text-white no-underline">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-pv-orange to-pv-dark_orange flex items-center justify-center" style="box-shadow:0 0 12px rgba(249,115,22,0.4);">
+        <iconify-icon icon="solar:settings-bold" class="text-white text-lg"></iconify-icon>
+      </div>
+      <span class="font-bold text-white" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;letter-spacing:-0.5px;">Tito<span class="text-pv-orange" style="font-weight:400;font-family:'Inter',sans-serif;">.app</span></span>
+      <div class="brand-dot ml-1"></div>
+    </a>
+    <a href="/" class="inline-flex items-center gap-2 text-sm font-semibold text-neutral-300 hover:text-white no-underline px-4 py-2 rounded-full hover:bg-white/5 transition-all">
+      <iconify-icon icon="solar:arrow-left-linear" class="text-base"></iconify-icon>
+      Voltar ao site
+    </a>
+  </nav>
+</div>
+
+<main class="relative z-10 px-4 md:px-8 pt-36 pb-24">
+  <div class="max-w-3xl mx-auto">
+
+    <!-- HEADER -->
+    <div class="mb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-pv-orange/30 bg-pv-orange/10 mb-5">
+        <iconify-icon icon="solar:shield-check-bold" class="text-pv-light_orange text-sm"></iconify-icon>
+        <span class="text-xs font-bold text-pv-light_orange tracking-widest uppercase">Documento Legal</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-serif font-bold text-white leading-tight mb-3">Política de <span class="text-gradient-orange italic">Privacidade</span></h1>
+      <p class="text-neutral-400">Última atualização: <strong class="text-neutral-200">12 de junho de 2026</strong> · Vigência a partir de 12 de junho de 2026</p>
+    </div>
+
+    <!-- INTRO CARD -->
+    <div class="glass-panel rounded-2xl p-6 mb-10">
+      <p class="text-neutral-300 text-sm m-0">Esta Política de Privacidade descreve como o <strong>Tito</strong> ("Tito", "Plataforma", "nós") coleta, utiliza, armazena, compartilha e protege informações pessoais de usuários da plataforma, do site <a href="https://tito.app.br" class="text-pv-light_orange underline">tito.app.br</a> e dos aplicativos white-label operados sobre a nossa infraestrutura. Leia também os nossos <a href="/termos" class="text-pv-light_orange underline">Termos de Serviço</a>.</p>
+    </div>
+
+    <!-- TOC -->
+    <div class="glass-panel rounded-2xl p-6 mb-12 toc">
+      <p class="text-xs font-bold uppercase tracking-widest text-pv-orange mb-3">Índice</p>
+      <a href="#identificacao">1. Quem somos (Controlador de Dados)</a>
+      <a href="#definicoes">2. Definições e papéis (Controlador e Operador)</a>
+      <a href="#dados-coletados">3. Dados que coletamos</a>
+      <a href="#google">4. Dados obtidos via APIs do Google (Google OAuth)</a>
+      <a href="#limited-use">5. Limited Use — Google API Services User Data Policy</a>
+      <a href="#finalidades">6. Como e por que usamos seus dados</a>
+      <a href="#bases-legais">7. Bases legais (LGPD / GDPR)</a>
+      <a href="#compartilhamento">8. Compartilhamento e suboperadores</a>
+      <a href="#armazenamento">9. Armazenamento, retenção e transferência internacional</a>
+      <a href="#seguranca">10. Segurança da informação</a>
+      <a href="#direitos">11. Seus direitos</a>
+      <a href="#exclusao">12. Exclusão de conta e de dados</a>
+      <a href="#criancas">13. Crianças e adolescentes</a>
+      <a href="#cookies">14. Cookies e tecnologias semelhantes</a>
+      <a href="#alteracoes">15. Alterações desta Política</a>
+      <a href="#contato">16. Contato e Encarregado (DPO)</a>
+    </div>
+
+    <div class="legal">
+
+      <h2 id="identificacao">1. Quem somos (Controlador de Dados)</h2>
+      <p>O Tito é uma plataforma SaaS (Software como Serviço) multi-tenant de gestão para igrejas e organizações religiosas. A plataforma é fornecida no modelo white-label: cada igreja cliente ("Igreja") opera o seu próprio aplicativo, com a sua marca, sobre a nossa infraestrutura.</p>
+      <p>Para qualquer assunto relacionado a esta Política ou ao tratamento de dados pessoais, o responsável pela plataforma Tito pode ser contatado por e-mail:</p>
+      <ul>
+        <li><strong>E-mail de contato e privacidade:</strong> <a href="mailto:titodevapp@gmail.com">titodevapp@gmail.com</a></li>
+      </ul>
+
+      <h2 id="definicoes">2. Definições e papéis (Controlador e Operador)</h2>
+      <p>Em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — "LGPD") e, quando aplicável, com o Regulamento Geral de Proteção de Dados europeu ("GDPR"):</p>
+      <ul>
+        <li><strong>A Igreja cliente é a Controladora</strong> dos dados pessoais de seus membros, visitantes e colaboradores. É a Igreja quem decide quais dados coletar e para quais finalidades dentro do seu aplicativo.</li>
+        <li><strong>O Tito atua como Operador</strong> (processador), tratando esses dados em nome e segundo as instruções da Igreja, para prestar o serviço contratado.</li>
+        <li><strong>O Tito atua como Controlador</strong> apenas em relação aos dados que coleta diretamente para administrar a sua própria relação com a Igreja contratante e com os visitantes deste site (ex.: dados de cadastro do administrador, faturamento e contato comercial).</li>
+      </ul>
+
+      <h2 id="dados-coletados">3. Dados que coletamos</h2>
+      <p>Coletamos apenas os dados necessários para operar a plataforma. As categorias podem variar conforme os módulos que cada Igreja ativa.</p>
+
+      <h3>3.1. Dados fornecidos por você</h3>
+      <ul>
+        <li><strong>Identificação e contato:</strong> nome, e-mail, telefone, data de nascimento, foto de perfil, endereço.</li>
+        <li><strong>Dados de conta:</strong> credenciais de acesso, perfil/papel de usuário (membro, líder, tesoureiro, pastor, administrador etc.) e preferências.</li>
+        <li><strong>Conteúdo gerado pelo usuário:</strong> pedidos de oração, mensagens, anotações de estudo, formulários de acolhida e respostas em eventos.</li>
+        <li><strong>Dados financeiros de contribuição:</strong> registros de dízimos, ofertas e doações (incluindo dados de transações via PIX). Não armazenamos números completos de cartão de crédito.</li>
+      </ul>
+
+      <h3>3.2. Dados coletados automaticamente</h3>
+      <ul>
+        <li><strong>Dados técnicos:</strong> endereço IP, tipo de dispositivo, sistema operacional, identificadores do aplicativo e dados de log.</li>
+        <li><strong>Dados de uso:</strong> páginas e recursos acessados, progresso em cursos, planos de leitura e interações de gamificação.</li>
+        <li><strong>Notificações push:</strong> tokens de dispositivo para envio de notificações (quando autorizado por você).</li>
+      </ul>
+
+      <h3>3.3. Dados sensíveis</h3>
+      <p>Pela natureza de uma comunidade de fé, alguns dados podem ser considerados sensíveis pela LGPD (como convicção religiosa, inferida pela própria participação). Tratamos esses dados exclusivamente para as finalidades religiosas e de assistência da Igreja, com a proteção reforçada exigida por lei, e nunca os utilizamos para publicidade.</p>
+
+      <h2 id="google">4. Dados obtidos via APIs do Google (Google OAuth)</h2>
+      <p>Alguns recursos opcionais do Tito permitem que você conecte a sua conta Google para integrar serviços. Essa conexão só ocorre mediante a sua autorização explícita por meio do fluxo oficial de consentimento do Google (Google OAuth), e você pode revogá-la a qualquer momento.</p>
+
+      <div class="callout">
+        <p class="m-0"><strong>Escopos do Google que podemos solicitar.</strong> Solicitamos somente os escopos mínimos necessários para a funcionalidade que você ativar:</p>
+      </div>
+
+      <table class="legal-table">
+        <thead><tr><th>Escopo do Google</th><th>Para que usamos</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><code>userinfo.email</code> e <code>userinfo.profile</code> e <code>openid</code></td>
+            <td>Autenticar você ("Entrar com o Google") e identificar sua conta na plataforma com nome, e-mail e foto.</td>
+          </tr>
+          <tr>
+            <td><code>calendar.events</code> / <code>calendar</code> (Google Calendar API)</td>
+            <td>Sincronizar a Agenda Pastoral com o seu Google Agenda: criar, ler, atualizar e remover compromissos e agendamentos que você gerencia dentro do Tito.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>4.1. Como tratamos os dados do Google</h3>
+      <ul>
+        <li><strong>Acesso:</strong> acessamos apenas os dados estritamente necessários ao recurso que você ativou (por exemplo, eventos do Google Agenda para o recurso de Agenda Pastoral).</li>
+        <li><strong>Uso:</strong> usamos esses dados unicamente para fornecer e melhorar a funcionalidade visível ao usuário que motivou a autorização.</li>
+        <li><strong>Armazenamento:</strong> armazenamos somente os tokens de acesso/atualização (de forma criptografada) e os metadados mínimos necessários à sincronização. Não criamos cópias permanentes do conteúdo do seu calendário além do necessário para exibir e sincronizar os eventos.</li>
+        <li><strong>Compartilhamento:</strong> não vendemos, alugamos nem transferimos os dados obtidos via APIs do Google a terceiros, e não os utilizamos para publicidade.</li>
+        <li><strong>Revogação:</strong> você pode desconectar a integração dentro do aplicativo ou em <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>. Após a revogação, deixamos de acessar novos dados e excluímos os tokens armazenados.</li>
+      </ul>
+
+      <h2 id="limited-use">5. Limited Use — Google API Services User Data Policy</h2>
+      <div class="callout">
+        <p class="m-0">O uso pelo Tito das informações recebidas das APIs do Google adere à <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, incluindo os requisitos de <strong>Uso Limitado (Limited Use)</strong>.</p>
+      </div>
+      <p>Em conformidade com esses requisitos, declaramos expressamente que:</p>
+      <ul>
+        <li>Os dados obtidos via APIs do Google são usados <strong>apenas</strong> para fornecer ou aprimorar funcionalidades visíveis ao usuário na interface do aplicativo;</li>
+        <li><strong>Não transferimos</strong> esses dados a terceiros, exceto quando necessário para fornecer ou melhorar tais funcionalidades, para cumprir leis aplicáveis ou como parte de uma fusão/aquisição com o devido consentimento do usuário;</li>
+        <li><strong>Não usamos</strong> esses dados para fins de publicidade, marketing ou qualquer finalidade não relacionada;</li>
+        <li><strong>Não permitimos</strong> que humanos leiam esses dados, salvo (a) com o seu consentimento expresso, (b) para fins de segurança, (c) para cumprir a lei, ou (d) quando os dados forem agregados e anonimizados para operações internas.</li>
+      </ul>
+
+      <h2 id="finalidades">6. Como e por que usamos seus dados</h2>
+      <ul>
+        <li>Fornecer, operar e manter a plataforma e os módulos contratados pela sua Igreja;</li>
+        <li>Autenticar usuários e gerenciar permissões de acesso;</li>
+        <li>Processar contribuições, dízimos e ofertas, e gerar relatórios financeiros;</li>
+        <li>Possibilitar comunicação pastoral, acolhida de visitantes e jornadas de discipulado;</li>
+        <li>Enviar notificações operacionais e, quando autorizado, comunicações da Igreja;</li>
+        <li>Garantir a segurança, prevenir fraudes e cumprir obrigações legais;</li>
+        <li>Melhorar a plataforma por meio de métricas agregadas e anonimizadas.</li>
+      </ul>
+
+      <h2 id="bases-legais">7. Bases legais (LGPD / GDPR)</h2>
+      <p>Tratamos dados pessoais com fundamento em uma ou mais das seguintes bases legais: <strong>consentimento</strong> do titular; <strong>execução de contrato</strong>; <strong>cumprimento de obrigação legal ou regulatória</strong>; <strong>legítimo interesse</strong> (sempre ponderado com seus direitos); e <strong>tutela da saúde ou garantia da prevenção à fraude</strong>, quando aplicável. O tratamento de dados sensíveis por entidade religiosa observa as hipóteses específicas do art. 11 da LGPD.</p>
+
+      <h2 id="compartilhamento">8. Compartilhamento e suboperadores</h2>
+      <p>Não vendemos seus dados pessoais. Compartilhamos dados apenas com:</p>
+      <ul>
+        <li><strong>Sua Igreja</strong> (Controladora), conforme os papéis e permissões configurados;</li>
+        <li><strong>Provedores de infraestrutura e suboperadores</strong> que viabilizam o serviço, sob contrato e obrigações de confidencialidade — por exemplo: Supabase (banco de dados e autenticação), Vercel (hospedagem), Google Cloud (APIs e calendário), provedores de mensageria (WhatsApp/SMS) e de processamento de pagamentos/PIX;</li>
+        <li><strong>Autoridades públicas</strong>, quando exigido por lei, ordem judicial ou requisição legítima.</li>
+      </ul>
+
+      <h2 id="armazenamento">9. Armazenamento, retenção e transferência internacional</h2>
+      <p>Os dados são armazenados em ambiente seguro com isolamento por <em>Row Level Security</em> (RLS) no PostgreSQL, de modo que cada Igreja acessa somente os seus próprios dados. Retemos os dados pelo tempo necessário às finalidades descritas e às obrigações legais (por exemplo, registros financeiros podem ter prazo de guarda legal). Alguns provedores podem processar dados fora do Brasil; nesses casos, adotamos salvaguardas adequadas (como cláusulas contratuais) conforme a LGPD e o GDPR.</p>
+
+      <h2 id="seguranca">10. Segurança da informação</h2>
+      <p>Adotamos medidas técnicas e organizacionais para proteger seus dados, incluindo criptografia em trânsito (TLS) e em repouso para dados sensíveis e tokens, controle de acesso por perfil, isolamento multi-tenant, registros de auditoria e monitoramento. Nenhum sistema é 100% imune; em caso de incidente de segurança relevante, comunicaremos os titulares e a Autoridade Nacional de Proteção de Dados (ANPD) conforme exigido por lei.</p>
+
+      <h2 id="direitos">11. Seus direitos</h2>
+      <p>Você pode, a qualquer momento, exercer os direitos previstos na LGPD e no GDPR, incluindo:</p>
+      <ul>
+        <li>Confirmar a existência de tratamento e <strong>acessar</strong> seus dados;</li>
+        <li><strong>Corrigir</strong> dados incompletos, inexatos ou desatualizados;</li>
+        <li>Solicitar <strong>anonimização, bloqueio ou eliminação</strong> de dados desnecessários ou tratados em desconformidade;</li>
+        <li>Solicitar a <strong>portabilidade</strong> dos dados;</li>
+        <li><strong>Revogar o consentimento</strong> e opor-se a tratamentos;</li>
+        <li>Solicitar informações sobre o <strong>compartilhamento</strong> de dados.</li>
+      </ul>
+      <p>Para exercer seus direitos, escreva para <a href="mailto:titodevapp@gmail.com">titodevapp@gmail.com</a>. Como o Tito atua como Operador, pedidos relativos a dados gerenciados pela sua Igreja podem ser encaminhados a ela.</p>
+
+      <h2 id="exclusao">12. Exclusão de conta e de dados</h2>
+      <p>Você pode solicitar a exclusão da sua conta e dos dados associados diretamente no aplicativo (em <em>Configurações &gt; Conta</em>) ou enviando um pedido para <a href="mailto:titodevapp@gmail.com">titodevapp@gmail.com</a>. Concluiremos a exclusão em prazo razoável, ressalvados os dados que devamos reter por obrigação legal (por exemplo, registros fiscais e financeiros). Consulte o passo a passo completo na nossa página de <a href="/exclusao">Exclusão de Conta e Dados</a>. Esta seção atende aos requisitos de exclusão de dados da Apple App Store e da Google Play Store.</p>
+
+      <h2 id="criancas">13. Crianças e adolescentes</h2>
+      <p>A plataforma pode ser usada por crianças e adolescentes no contexto das atividades da Igreja, sempre com o consentimento e sob a supervisão de pais ou responsáveis legais, no melhor interesse do menor, conforme o art. 14 da LGPD. Não direcionamos publicidade a menores nem coletamos dados de crianças de forma autônoma.</p>
+
+      <h2 id="cookies">14. Cookies e tecnologias semelhantes</h2>
+      <p>Utilizamos cookies e armazenamento local estritamente necessários para autenticação, segurança e funcionamento da plataforma, além de, quando aplicável, métricas agregadas de uso. Você pode gerenciar cookies nas configurações do seu navegador; a desativação de cookies essenciais pode afetar o funcionamento do serviço.</p>
+
+      <h2 id="alteracoes">15. Alterações desta Política</h2>
+      <p>Podemos atualizar esta Política periodicamente. A versão vigente estará sempre disponível em <a href="https://tito.app.br/privacidade">tito.app.br/privacidade</a>, com a data de "última atualização" no topo. Alterações relevantes serão comunicadas por meios razoáveis. O uso continuado da plataforma após a publicação representa concordância com a Política revisada.</p>
+
+      <h2 id="contato">16. Contato e Encarregado (DPO)</h2>
+      <p>Para dúvidas, solicitações ou para exercer seus direitos de proteção de dados, entre em contato com o nosso Encarregado pelo Tratamento de Dados Pessoais (DPO):</p>
+      <ul>
+        <li><strong>E-mail do Encarregado (DPO):</strong> <a href="mailto:titodevapp@gmail.com">titodevapp@gmail.com</a></li>
+      </ul>
+      <p>Você também tem o direito de apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD).</p>
+
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="glass-panel border-t border-white/5 py-10 px-4 md:px-12 relative z-10 mt-12">
+  <div class="max-w-3xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-pv-orange to-pv-dark_orange flex items-center justify-center"><iconify-icon icon="solar:settings-bold" class="text-white text-lg"></iconify-icon></div>
+      <span class="text-base font-bold text-white" style="font-family:'Plus Jakarta Sans',sans-serif;">Tito<span class="text-pv-orange" style="font-weight:400;font-family:'Inter',sans-serif;">.app</span></span>
+    </div>
+    <nav class="flex flex-wrap gap-6 justify-center text-sm font-medium text-neutral-500">
+      <a href="/" class="hover:text-white transition-colors">Início</a>
+      <a href="/privacidade" class="text-pv-light_orange">Privacidade</a>
+      <a href="/termos" class="hover:text-white transition-colors">Termos</a>
+      <a href="/exclusao" class="hover:text-white transition-colors">Exclusão de Dados</a>
+    </nav>
+    <p class="text-xs text-neutral-600">© 2026 Tito App.</p>
+  </div>
+</footer>
+</body>
+</html>
