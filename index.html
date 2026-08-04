@@ -280,7 +280,7 @@ body { background:#000; color:#FAFAFA; font-family:'Inter',sans-serif; overflow-
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
   <div class="space-y-7 z-10">
     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 animate-fade-in">
-      <span class="w-1.5 h-1.5 rounded-full bg-tito-accent animate-pulse"></span>
+      <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tito-accent_light opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tito-accent"></span></span>
       <span class="text-xs font-semibold text-white/70 tracking-wide uppercase">Gestão completa para sua igreja</span>
     </div>
 
@@ -296,10 +296,20 @@ body { background:#000; color:#FAFAFA; font-family:'Inter',sans-serif; overflow-
     </p>
 
     <div class="flex flex-col sm:flex-row gap-4 animate-slide-up delay-300 pt-2 items-center">
-      <a href="#como-funciona" class="w-full sm:w-auto bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white text-sm font-semibold px-8 py-4 rounded-full transition-all flex items-center justify-center gap-2 group">
-        <iconify-icon icon="solar:play-circle-linear" class="text-tito-accent"></iconify-icon>
-        Ver como funciona
-        <iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-muted group-hover:text-white transition-colors"></iconify-icon>
+      <!-- Beam Button — variante monocromática do ds1 (borda em feixe + linhas correndo) -->
+      <a href="#como-funciona" class="group inline-flex overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.35)] focus:outline-none text-sm font-medium text-white h-[54px] w-full sm:w-auto rounded-full px-8 relative items-center justify-center" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2)); --border-radius-before: 9999px">
+        <div class="absolute inset-0 -z-20 rounded-full overflow-hidden p-[1px]">
+          <div class="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_0_300deg,#ffffff_360deg)]" style="animation: beam-spin 3s linear infinite;"></div>
+          <div class="absolute inset-[1px] rounded-full bg-[#000]"></div>
+        </div>
+        <div class="overflow-hidden bg-[#0E0E0E] rounded-full absolute top-[2px] right-[2px] bottom-[2px] left-[2px]">
+          <div class="bg-gradient-to-b from-white/10 to-transparent absolute top-0 right-0 bottom-0 left-0"></div>
+          <div class="opacity-[0.07] mix-blend-plus-lighter absolute top-0 right-0 bottom-0 left-0" style="background-image: repeating-linear-gradient(90deg, #fff, #fff 1px, transparent 1px, transparent 8px); background-size: 24px 100%; animation: lines-slide 1.5s linear infinite;"></div>
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2 bg-white/15 blur-2xl rounded-full pointer-events-none transition-colors duration-500 group-hover:bg-white/30"></div>
+        </div>
+        <iconify-icon icon="solar:play-circle-linear" class="relative z-10 mr-2 text-lg text-tito-accent"></iconify-icon>
+        <span class="transition-colors group-hover:text-white uppercase font-semibold text-white/90 tracking-tight z-10 relative font-sans">Ver como funciona</span>
+        <iconify-icon icon="solar:arrow-right-linear" class="relative z-10 ml-2 transition-transform duration-300 group-hover:translate-x-1 text-lg"></iconify-icon>
       </a>
     </div>
 
@@ -520,46 +530,46 @@ body { background:#000; color:#FAFAFA; font-family:'Inter',sans-serif; overflow-
   </div>
 
   <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-    <div class="card-paper p-5 text-center">
-      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-neutral-100 border border-black/[0.06]"><iconify-icon icon="solar:wallet-money-bold" class="text-xl text-neutral-800"></iconify-icon></div>
+    <div class="card-paper p-5 text-center group">
+      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-neutral-100 border border-black/[0.06] group-hover:scale-110 transition-transform"><iconify-icon icon="solar:wallet-money-bold" class="text-xl text-neutral-800"></iconify-icon></div>
       <h4 class="text-sm font-semibold mb-1 tracking-tight">Finanças</h4><p class="text-xs text-neutral-500 leading-relaxed">Múltiplas contas, aprovações e relatórios</p>
     </div>
-    <div class="card-paper p-5 text-center">
-      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-neutral-100 border border-black/[0.06]"><iconify-icon icon="solar:calendar-date-bold" class="text-xl text-neutral-800"></iconify-icon></div>
+    <div class="card-paper p-5 text-center group">
+      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-neutral-100 border border-black/[0.06] group-hover:scale-110 transition-transform"><iconify-icon icon="solar:calendar-date-bold" class="text-xl text-neutral-800"></iconify-icon></div>
       <h4 class="text-sm font-semibold mb-1 tracking-tight">Eventos</h4><p class="text-xs text-neutral-500 leading-relaxed">Inscrições, check-in QR Code e formulários</p>
     </div>
-    <div class="card-paper p-5 text-center" style="border-color:rgba(234,88,12,0.25);">
-      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center" style="background:rgba(249,115,22,0.10);border:1px solid rgba(249,115,22,0.25);"><iconify-icon icon="solar:users-group-rounded-bold" class="text-xl text-tito-accent_dark"></iconify-icon></div>
+    <div class="card-paper p-5 text-center group" style="border-color:rgba(234,88,12,0.25);">
+      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform" style="background:rgba(249,115,22,0.10);border:1px solid rgba(249,115,22,0.25);"><iconify-icon icon="solar:users-group-rounded-bold" class="text-xl text-tito-accent_dark"></iconify-icon></div>
       <h4 class="text-sm font-semibold mb-1 tracking-tight">Células</h4><p class="text-xs text-neutral-500 leading-relaxed">Grupos com mapa, líderes e estudos</p>
       <span class="inline-block mt-3 text-[10px] font-bold bg-black text-white px-2 py-1 rounded uppercase tracking-wider">Popular</span>
     </div>
-    <div class="card-paper p-5 text-center">
-      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-neutral-100 border border-black/[0.06]"><iconify-icon icon="solar:book-2-bold" class="text-xl text-neutral-800"></iconify-icon></div>
+    <div class="card-paper p-5 text-center group">
+      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-neutral-100 border border-black/[0.06] group-hover:scale-110 transition-transform"><iconify-icon icon="solar:book-2-bold" class="text-xl text-neutral-800"></iconify-icon></div>
       <h4 class="text-sm font-semibold mb-1 tracking-tight">Cursos</h4><p class="text-xs text-neutral-500 leading-relaxed">Aulas em texto, vídeo e materiais</p>
     </div>
-    <div class="card-paper p-5 text-center">
-      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-neutral-100 border border-black/[0.06]"><iconify-icon icon="solar:document-text-bold" class="text-xl text-neutral-800"></iconify-icon></div>
+    <div class="card-paper p-5 text-center group">
+      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-neutral-100 border border-black/[0.06] group-hover:scale-110 transition-transform"><iconify-icon icon="solar:document-text-bold" class="text-xl text-neutral-800"></iconify-icon></div>
       <h4 class="text-sm font-semibold mb-1 tracking-tight">Planos de Leitura</h4><p class="text-xs text-neutral-500 leading-relaxed">Devocionais diários com progresso</p>
     </div>
-    <div class="card-paper p-5 text-center">
-      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-neutral-100 border border-black/[0.06]"><iconify-icon icon="solar:microphone-large-bold" class="text-xl text-neutral-800"></iconify-icon></div>
+    <div class="card-paper p-5 text-center group">
+      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-neutral-100 border border-black/[0.06] group-hover:scale-110 transition-transform"><iconify-icon icon="solar:microphone-large-bold" class="text-xl text-neutral-800"></iconify-icon></div>
       <h4 class="text-sm font-semibold mb-1 tracking-tight">Sermões</h4><p class="text-xs text-neutral-500 leading-relaxed">Acervo com áudio, vídeo e transcrições</p>
     </div>
-    <div class="card-paper p-5 text-center">
-      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-neutral-100 border border-black/[0.06]"><iconify-icon icon="solar:global-bold" class="text-xl text-neutral-800"></iconify-icon></div>
+    <div class="card-paper p-5 text-center group">
+      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-neutral-100 border border-black/[0.06] group-hover:scale-110 transition-transform"><iconify-icon icon="solar:global-bold" class="text-xl text-neutral-800"></iconify-icon></div>
       <h4 class="text-sm font-semibold mb-1 tracking-tight">Missões</h4><p class="text-xs text-neutral-500 leading-relaxed">Missionários e igrejas parceiras</p>
     </div>
-    <div class="card-paper p-5 text-center" style="border-color:rgba(234,88,12,0.25);">
-      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center" style="background:rgba(249,115,22,0.10);border:1px solid rgba(249,115,22,0.25);"><iconify-icon icon="solar:chat-round-dots-bold" class="text-xl text-tito-accent_dark"></iconify-icon></div>
+    <div class="card-paper p-5 text-center group" style="border-color:rgba(234,88,12,0.25);">
+      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform" style="background:rgba(249,115,22,0.10);border:1px solid rgba(249,115,22,0.25);"><iconify-icon icon="solar:chat-round-dots-bold" class="text-xl text-tito-accent_dark"></iconify-icon></div>
       <h4 class="text-sm font-semibold mb-1 tracking-tight">Atendimento</h4><p class="text-xs text-neutral-500 leading-relaxed">WhatsApp com IA que entende o pedido</p>
       <span class="inline-block mt-3 text-[10px] font-bold bg-black text-white px-2 py-1 rounded uppercase tracking-wider">Com IA</span>
     </div>
-    <div class="card-paper p-5 text-center">
-      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-neutral-100 border border-black/[0.06]"><iconify-icon icon="solar:calendar-mark-bold" class="text-xl text-neutral-800"></iconify-icon></div>
+    <div class="card-paper p-5 text-center group">
+      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-neutral-100 border border-black/[0.06] group-hover:scale-110 transition-transform"><iconify-icon icon="solar:calendar-mark-bold" class="text-xl text-neutral-800"></iconify-icon></div>
       <h4 class="text-sm font-semibold mb-1 tracking-tight">Agenda Pastoral</h4><p class="text-xs text-neutral-500 leading-relaxed">Agendamentos + Google Calendar</p>
     </div>
-    <div class="card-paper p-5 text-center" style="border-color:rgba(234,88,12,0.25);">
-      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center" style="background:rgba(249,115,22,0.10);border:1px solid rgba(249,115,22,0.25);"><iconify-icon icon="solar:map-arrow-right-bold" class="text-xl text-tito-accent_dark"></iconify-icon></div>
+    <div class="card-paper p-5 text-center group" style="border-color:rgba(234,88,12,0.25);">
+      <div class="w-11 h-11 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform" style="background:rgba(249,115,22,0.10);border:1px solid rgba(249,115,22,0.25);"><iconify-icon icon="solar:map-arrow-right-bold" class="text-xl text-tito-accent_dark"></iconify-icon></div>
       <h4 class="text-sm font-semibold mb-1 tracking-tight">Jornadas</h4><p class="text-xs text-neutral-500 leading-relaxed">Discipulado configurável em tempo real</p>
       <span class="inline-block mt-3 text-[10px] font-bold bg-black text-white px-2 py-1 rounded uppercase tracking-wider">Destaque</span>
     </div>
@@ -585,7 +595,7 @@ body { background:#000; color:#FAFAFA; font-family:'Inter',sans-serif; overflow-
 
 <!-- Filtros (padrão de categorias do DS) -->
 <div class="flex flex-wrap gap-3">
-  <button data-tab="membros" class="tab-btn bg-white text-black font-semibold px-5 py-2.5 rounded-full text-sm tracking-tight transition-all">Para Membros</button>
+  <button data-tab="membros" class="tab-btn bg-white text-black font-semibold animate-pulse-soft px-5 py-2.5 rounded-full text-sm tracking-tight transition-all">Para Membros</button>
   <button data-tab="admin" class="tab-btn bg-white/5 border border-white/10 text-white font-medium px-5 py-2.5 rounded-full text-sm hover:bg-white/10 hover:border-white/20 transition-all">Para Admins</button>
   <button data-tab="pastores" class="tab-btn bg-white/5 border border-white/10 text-white font-medium px-5 py-2.5 rounded-full text-sm hover:bg-white/10 hover:border-white/20 transition-all">Para Pastores</button>
 </div>
@@ -1014,7 +1024,7 @@ body { background:#000; color:#FAFAFA; font-family:'Inter',sans-serif; overflow-
     <img src="assets/logo-tito-black.png" alt="Tito App" class="h-9 w-auto mx-auto mb-8">
 
     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 bg-black/[0.03] mb-7">
-      <span class="w-1.5 h-1.5 rounded-full bg-tito-accent animate-pulse"></span>
+      <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tito-accent_light opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tito-accent"></span></span>
       <span class="text-xs font-semibold text-neutral-600 tracking-wide uppercase">Pronto para começar</span>
     </div>
 
@@ -1166,7 +1176,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ——— Tabs de funcionalidades ——— */
   const tabBtns = [...document.querySelectorAll(".tab-btn")];
-  const activeCls = ["bg-white", "text-black", "font-semibold"];
+  const activeCls = ["bg-white", "text-black", "font-semibold", "animate-pulse-soft"];
   const idleCls = ["bg-white/5", "border", "border-white/10", "text-white", "font-medium", "hover:bg-white/10", "hover:border-white/20"];
   tabBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
