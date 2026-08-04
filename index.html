@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tito — O Organizador | Plataforma SaaS para Igrejas Evangélicas</title>
-<meta name="description" content="Tito é a plataforma SaaS white-label completa para igrejas evangélicas brasileiras. Organize o backstage para focar nas pessoas.">
+<meta name="description" content="Tito é a plataforma SaaS white-label completa para auxiliar na expansão da sua igreja. Organize o backstage para focar nas pessoas.">
 <meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://tito.app.br/">
 
@@ -19,7 +19,7 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Tito App">
 <meta property="og:title" content="Tito — O Organizador da sua Igreja">
-<meta property="og:description" content="Plataforma SaaS white-label para igrejas evangélicas brasileiras. Organize o backstage para focar no que importa: as pessoas.">
+<meta property="og:description" content="Plataforma SaaS white-label para auxiliar na expansão da sua igreja. Organize o backstage para focar no que importa: as pessoas.">
 <meta property="og:url" content="https://tito.app.br/">
 <meta property="og:image" content="https://tito.app.br/assets/icon-512.png">
 <meta name="twitter:card" content="summary">
@@ -85,8 +85,9 @@ body { background:#000; color:#FAFAFA; font-family:'Inter',sans-serif; overflow-
 /* Seções claras ocupam a largura inteira da tela (não são cards). */
 .sec-dark  { position:relative; }
 .sec-light { position:relative; background:#F5F5F7; color:#0A0A0C; }
-/* Emenda suave entre o preto e o papel */
-.sec-light::before { content:""; position:absolute; left:0; right:0; top:-1px; height:1px; background:rgba(255,255,255,.10); }
+.sec-white { position:relative; background:#FFFFFF; color:#0A0A0C; }
+/* Emenda suave entre o preto e as superfícies claras */
+.sec-light::before, .sec-white::before { content:""; position:absolute; left:0; right:0; top:-1px; height:1px; background:rgba(255,255,255,.10); }
 
 /* ——— TIPOGRAFIA / GRADIENTES ——— */
 .text-gradient-light { background:linear-gradient(180deg,#FFFFFF 0%,#FAFAFA 40%,#8E8E93 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
@@ -149,6 +150,49 @@ body { background:#000; color:#FAFAFA; font-family:'Inter',sans-serif; overflow-
 .card-paper { background:#FFFFFF; border:1px solid rgba(0,0,0,0.06); border-radius:24px;
   transition:transform .3s cubic-bezier(0.16,1,0.3,1), box-shadow .3s ease, border-color .3s ease; }
 .card-paper:hover { transform:translateY(-4px); box-shadow:0 14px 30px -12px rgba(0,0,0,0.20); }
+
+/* ——— PLANOS ——— */
+.plan { position:relative; border-radius:28px;
+  transition:transform .45s cubic-bezier(0.16,1,0.3,1), box-shadow .45s ease, border-color .45s ease; }
+.plan:hover { transform:translateY(-6px); }
+.plan > * { position:relative; z-index:1; }
+
+.plan--lite   { background:#FFFFFF; border:1px solid rgba(0,0,0,0.10); box-shadow:0 6px 24px -16px rgba(0,0,0,.25); }
+.plan--lite:hover { border-color:rgba(0,0,0,.24); box-shadow:0 24px 44px -22px rgba(0,0,0,.30); }
+
+.plan--custom { background:#FFFFFF; border:2px solid #0A0A0C; }
+.plan--custom:hover { box-shadow:0 24px 44px -22px rgba(0,0,0,.40); }
+
+.plan--pro { background:#0A0A0C; border:2px solid #F97316; box-shadow:0 12px 44px -18px rgba(249,115,22,.45); }
+.plan--pro:hover { box-shadow:0 26px 64px -20px rgba(249,115,22,.62); }
+/* Brilho interno que respira no hover */
+.plan--pro::after { content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; z-index:0;
+  background:radial-gradient(120% 80% at 50% 0%, rgba(249,115,22,.18), transparent 62%);
+  opacity:.55; transition:opacity .45s ease; }
+.plan--pro:hover::after { opacity:1; }
+
+.plan-badge { position:absolute; top:-15px; right:20px; z-index:3;
+  background:#F97316; color:#fff; font-size:10px; font-weight:700; letter-spacing:.14em;
+  text-transform:uppercase; padding:7px 14px; border-radius:12px; white-space:nowrap;
+  box-shadow:0 0 22px rgba(249,115,22,.55);
+  transition:transform .45s cubic-bezier(0.16,1,0.3,1), box-shadow .45s ease; }
+.plan--pro:hover .plan-badge { transform:translateY(-2px) scale(1.04); box-shadow:0 0 30px rgba(249,115,22,.75); }
+
+.plan-feat { display:flex; align-items:flex-start; gap:12px; font-size:.9rem; line-height:1.5; }
+.plan-feat iconify-icon { flex-shrink:0; margin-top:2px; font-size:1.05rem;
+  transition:transform .35s cubic-bezier(0.16,1,0.3,1); }
+.plan:hover .plan-feat iconify-icon { transform:scale(1.14); }
+
+.plan-btn { display:flex; align-items:center; justify-content:center; gap:8px; width:100%;
+  padding:15px 20px; border-radius:16px; font-size:.95rem; font-weight:600; letter-spacing:-.01em;
+  text-decoration:none; cursor:pointer;
+  transition:background .3s ease, transform .3s cubic-bezier(0.16,1,0.3,1), box-shadow .3s ease; }
+.plan-btn iconify-icon { transition:transform .3s cubic-bezier(0.16,1,0.3,1); }
+.plan-btn:hover iconify-icon { transform:translateX(4px); }
+.plan-btn--dark   { background:#0A0A0C; color:#FFFFFF; }
+.plan-btn--dark:hover   { background:#1F1F22; box-shadow:0 14px 26px -14px rgba(0,0,0,.60); }
+.plan-btn--accent { background:#F97316; color:#FFFFFF; box-shadow:0 8px 26px -10px rgba(249,115,22,.60); }
+.plan-btn--accent:hover { background:#EA580C; box-shadow:0 16px 34px -12px rgba(249,115,22,.75); }
 
 /* ——— TABS ——— */
 .tab-panel { display:none; }
@@ -236,7 +280,7 @@ body { background:#000; color:#FAFAFA; font-family:'Inter',sans-serif; overflow-
     </h1>
 
     <p class="text-base md:text-lg text-tito-muted max-w-lg leading-relaxed animate-slide-up delay-200">
-      Plataforma SaaS white-label para igrejas evangélicas brasileiras. Organize o backstage
+      Plataforma SaaS white-label para auxiliar na expansão da sua igreja. Organize o backstage
       para focar no que importa: <span class="text-white font-medium">as pessoas</span>.
     </p>
 
@@ -761,7 +805,7 @@ body { background:#000; color:#FAFAFA; font-family:'Inter',sans-serif; overflow-
 <div class="border-b border-white/10 pb-6">
   <h2 class="text-sm text-tito-accent font-semibold uppercase tracking-widest mb-2">Diferenciais</h2>
   <h3 class="text-4xl font-serif font-bold text-white tracking-display">Por que o Tito?</h3>
-  <p class="text-tito-muted text-base mt-2 max-w-2xl">Não é só um app de gestão. É uma infraestrutura completa construída especificamente para igrejas evangélicas brasileiras.</p>
+  <p class="text-tito-muted text-base mt-2 max-w-2xl">Não é só um app de gestão. É uma infraestrutura completa construída para auxiliar na expansão da sua igreja.</p>
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -800,86 +844,108 @@ body { background:#000; color:#FAFAFA; font-family:'Inter',sans-serif; overflow-
 </div>
 </section>
 
-<!-- ══════════════ 8) A ORIGEM DO NOME — dobra clara ══════════════ -->
-<section id="origem" class="sec-light scroll-mt-24 py-24 md:py-32 px-4 md:px-12 overflow-hidden animate-on-scroll animate-fade-slide-in">
-<div class="absolute -right-24 -top-24 w-96 h-96 rounded-full pointer-events-none" style="background:rgba(249,115,22,0.07);filter:blur(80px);"></div>
+<!-- ══════════════ 8) A ORIGEM DO NOME — escuro ══════════════ -->
+<section id="origem" class="sec-dark scroll-mt-24 py-24 md:py-32 px-4 md:px-12 overflow-hidden animate-on-scroll animate-fade-slide-in">
+<div class="absolute -right-24 -top-24 w-96 h-96 rounded-full pointer-events-none" style="background:rgba(249,115,22,0.10);filter:blur(90px);"></div>
 <div class="max-w-3xl mx-auto text-center relative z-10">
-  <h2 class="text-sm text-tito-accent_dark font-semibold uppercase tracking-widest mb-8">A Origem do Nome</h2>
+  <h2 class="text-sm text-tito-accent font-semibold uppercase tracking-widest mb-8">A Origem do Nome</h2>
 
-  <img src="assets/icon-tito-mark.png" alt="Símbolo Tito App" class="w-12 h-12 mx-auto mb-8 opacity-90">
+  <svg viewBox="0 0 100 100" class="w-12 h-12 mx-auto mb-8" aria-label="Símbolo Tito App" role="img">
+    <path d="M 73.39 20.06 A 38 38 0 1 0 86.71 40.17" fill="none" stroke="#FAFAFA" stroke-width="7"/>
+    <rect x="24" y="33.5" width="60" height="9" fill="#FAFAFA"/>
+    <rect x="45.5" y="33.5" width="9" height="46.5" fill="#FAFAFA"/>
+  </svg>
 
-  <blockquote class="text-2xl md:text-4xl font-serif italic leading-[1.35] tracking-display mb-5">
+  <blockquote class="text-2xl md:text-4xl font-serif italic leading-[1.35] tracking-display mb-5 text-gradient-light">
     “Para que pusesses em ordem as coisas que ainda restam, e constituísses presbíteros em cada cidade…”
   </blockquote>
-  <p class="text-sm font-semibold uppercase tracking-widest text-tito-accent_dark mb-10">Tito 1:5</p>
+  <p class="text-sm font-semibold uppercase tracking-widest text-tito-accent mb-10">Tito 1:5</p>
 
-  <p class="text-base md:text-lg text-neutral-600 leading-relaxed mb-10">
-    O Tito foi nomeado em honra ao apóstolo enviado para <strong class="text-black font-semibold">organizar o que ainda faltava</strong>.
+  <p class="text-base md:text-lg text-tito-muted leading-relaxed mb-10">
+    O Tito foi nomeado em honra ao apóstolo enviado para <strong class="text-white font-medium">organizar o que ainda faltava</strong>.
     Nossa missão é a mesma: organizar o backstage da sua igreja para que os líderes dediquem-se inteiramente às pessoas.
   </p>
 
-  <div class="inline-flex items-center gap-4 px-5 py-4 rounded-2xl bg-white border border-black/[0.08] text-left">
-    <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0" style="background:rgba(249,115,22,0.10);border:1px solid rgba(249,115,22,0.25);">
-      <iconify-icon icon="solar:buildings-2-linear" class="text-xl text-tito-accent_dark"></iconify-icon>
+  <div class="inline-flex items-center gap-4 px-5 py-4 rounded-2xl glass-panel border border-white/5 text-left hairline-top">
+    <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 bg-tito-accent/10 border border-tito-accent/25">
+      <iconify-icon icon="solar:buildings-2-linear" class="text-xl text-tito-accent"></iconify-icon>
     </div>
     <div>
-      <p class="text-sm font-semibold tracking-tight">Implementação Pioneira</p>
-      <p class="text-xs text-neutral-500 mt-0.5 font-mono">app.igrejafamiliahazel.com.br</p>
+      <p class="text-sm font-medium text-white tracking-tight">Implementação Pioneira</p>
+      <p class="text-xs text-tito-dim mt-0.5 font-mono">app.igrejafamiliahazel.com.br</p>
     </div>
   </div>
 </div>
 </section>
 
-<!-- ══════════════ 9) PREÇOS — escuro ══════════════ -->
-<section id="precos" class="sec-dark scroll-mt-24 py-24 md:py-32 px-4 md:px-12 animate-on-scroll animate-fade-slide-in">
-<div class="max-w-7xl mx-auto space-y-10">
-<div class="border-b border-white/10 pb-6">
-  <h2 class="text-sm text-tito-accent font-semibold uppercase tracking-widest mb-2">Planos e Preços</h2>
-  <h3 class="text-4xl font-serif font-bold text-white tracking-display">Um plano para cada tamanho de ministério.</h3>
-  <p class="text-tito-muted text-base mt-2 max-w-2xl">Os valores variam conforme os módulos ativados, o tamanho da comunidade e o nível de suporte. Fale com a gente.</p>
-</div>
-
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-  <div class="glass-panel rounded-[32px] border border-white/5 p-8 hover-lift group hairline-top">
-    <div class="w-12 h-12 rounded-2xl bg-tito-card border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-      <iconify-icon icon="solar:layers-minimalistic-linear" class="text-2xl text-white"></iconify-icon>
-    </div>
-    <h4 class="text-xl font-serif font-bold text-white mb-2 tracking-display">Módulos à la carte</h4>
-    <p class="text-sm text-tito-muted leading-relaxed">Ative apenas os módulos que você precisa. Pague pelo que usa.</p>
+<!-- ══════════════ 9) PLANOS — dobra clara ══════════════ -->
+<section id="precos" class="sec-white scroll-mt-24 py-24 md:py-32 px-4 md:px-12 animate-on-scroll animate-fade-slide-in">
+<div class="max-w-7xl mx-auto">
+  <div class="mb-14">
+    <h2 class="text-sm text-tito-accent_dark font-semibold uppercase tracking-widest mb-3">Planos</h2>
+    <h3 class="text-3xl md:text-5xl font-serif font-bold tracking-display leading-[1.1] mb-5 max-w-5xl">Escolha o plano ideal para a sua Igreja</h3>
+    <p class="text-base md:text-lg text-neutral-600 leading-relaxed max-w-4xl">Do essencial ao sob medida — monte a estrutura certa para o tamanho da sua Igreja ou rede.</p>
   </div>
 
-  <!-- Único card com acento: o recomendado -->
-  <div class="rounded-[32px] border border-tito-accent/25 p-8 hover-lift group relative overflow-hidden bg-tito-surface">
-    <div class="absolute -right-8 -top-8 w-40 h-40 bg-tito-accent/10 rounded-full blur-3xl group-hover:bg-tito-accent/20 transition-colors"></div>
-    <div class="relative z-10">
-      <div class="w-12 h-12 rounded-2xl bg-tito-accent/10 border border-tito-accent/25 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-        <iconify-icon icon="solar:graph-up-bold" class="text-2xl text-tito-accent"></iconify-icon>
-      </div>
-      <div class="flex items-center gap-2 mb-2">
-        <h4 class="text-xl font-serif font-bold text-white tracking-display">Escala com você</h4>
-        <span class="px-2.5 py-1 rounded-md bg-tito-accent/10 text-tito-accent_light text-[10px] font-medium border border-tito-accent/25 uppercase tracking-wider">Recomendado</span>
-      </div>
-      <p class="text-sm text-tito-muted leading-relaxed">Planos para 200 a 2.000 membros. Serverless que cresce com a congregação.</p>
-    </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-7 items-stretch">
+
+    <!-- LITE -->
+    <article class="plan plan--lite p-8 flex flex-col animate-on-scroll animate-slide-up">
+      <p class="text-xs font-bold uppercase tracking-[0.14em] text-tito-accent_dark mb-3">Lite</p>
+      <h4 class="text-xl md:text-2xl font-serif font-bold tracking-display leading-snug mb-8 md:min-h-[4.25rem]">O essencial para organizar a sua Igreja</h4>
+      <ul class="space-y-4 mb-10 flex-1">
+        <li class="plan-feat text-neutral-800"><iconify-icon icon="solar:check-circle-linear" class="text-neutral-500"></iconify-icon><span>Módulos essenciais, à sua escolha</span></li>
+        <li class="plan-feat text-neutral-800"><iconify-icon icon="solar:check-circle-linear" class="text-neutral-500"></iconify-icon><span>App white-label (PWA, iOS e Android)</span></li>
+        <li class="plan-feat text-neutral-800"><iconify-icon icon="solar:check-circle-linear" class="text-neutral-500"></iconify-icon><span>Onboarding com a nossa equipe</span></li>
+        <li class="plan-feat text-neutral-800"><iconify-icon icon="solar:check-circle-linear" class="text-neutral-500"></iconify-icon><span>Suporte padrão</span></li>
+        <li class="plan-feat text-neutral-800"><iconify-icon icon="solar:check-circle-linear" class="text-neutral-500"></iconify-icon><span>Filiais disponíveis (+ valor por filial)</span></li>
+      </ul>
+      <a href="#contato" class="plan-btn plan-btn--dark">
+        Começar com o Lite
+        <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
+      </a>
+    </article>
+
+    <!-- PRO — o único plano com acento -->
+    <article class="plan plan--pro p-8 flex flex-col animate-on-scroll animate-slide-up delay-100">
+      <span class="plan-badge">Recomendado</span>
+      <p class="text-xs font-bold uppercase tracking-[0.14em] text-tito-accent mb-3">Pro</p>
+      <h4 class="text-xl md:text-2xl font-serif font-bold tracking-display leading-snug mb-8 md:min-h-[4.25rem] text-white">Todo o potencial do Tito, liberado</h4>
+      <ul class="space-y-4 mb-10 flex-1">
+        <li class="plan-feat text-neutral-200"><iconify-icon icon="solar:check-circle-linear" class="text-white/70"></iconify-icon><span>Todos os 10 módulos e skills</span></li>
+        <li class="plan-feat text-neutral-200"><iconify-icon icon="solar:check-circle-linear" class="text-white/70"></iconify-icon><span>IA no CRM via WhatsApp</span></li>
+        <li class="plan-feat text-neutral-200"><iconify-icon icon="solar:check-circle-linear" class="text-white/70"></iconify-icon><span>Gamificação completa</span></li>
+        <li class="plan-feat text-neutral-200"><iconify-icon icon="solar:check-circle-linear" class="text-white/70"></iconify-icon><span>Suporte prioritário</span></li>
+        <li class="plan-feat text-neutral-200"><iconify-icon icon="solar:check-circle-linear" class="text-white/70"></iconify-icon><span>Filiais disponíveis (+ valor por filial)</span></li>
+      </ul>
+      <a href="#contato" class="plan-btn plan-btn--accent">
+        Falar com a equipe
+        <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
+      </a>
+    </article>
+
+    <!-- MONTE O SEU -->
+    <article class="plan plan--custom p-8 flex flex-col animate-on-scroll animate-slide-up delay-200">
+      <p class="text-xs font-bold uppercase tracking-[0.14em] text-tito-accent_dark mb-3">Monte o seu</p>
+      <h4 class="text-xl md:text-2xl font-serif font-bold tracking-display leading-snug mb-8 md:min-h-[4.25rem]">Seu pacote, sob medida</h4>
+      <ul class="space-y-4 mb-10 flex-1">
+        <li class="plan-feat text-neutral-800"><iconify-icon icon="solar:check-circle-linear" class="text-neutral-500"></iconify-icon><span>Escolha módulo por módulo</span></li>
+        <li class="plan-feat text-neutral-800"><iconify-icon icon="solar:check-circle-linear" class="text-neutral-500"></iconify-icon><span>Ideal para redes multi-país</span></li>
+        <li class="plan-feat text-neutral-800"><iconify-icon icon="solar:check-circle-linear" class="text-neutral-500"></iconify-icon><span>Suporte dedicado na configuração</span></li>
+        <li class="plan-feat text-neutral-800"><iconify-icon icon="solar:check-circle-linear" class="text-neutral-500"></iconify-icon><span>Filiais/integrações sob consulta</span></li>
+        <li class="plan-feat text-neutral-800"><iconify-icon icon="solar:check-circle-linear" class="text-neutral-500"></iconify-icon><span>Proposta comercial personalizada</span></li>
+      </ul>
+      <a href="#contato" class="plan-btn plan-btn--dark">
+        Montar meu pacote
+        <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
+      </a>
+    </article>
+
   </div>
 
-  <div class="glass-panel rounded-[32px] border border-white/5 p-8 hover-lift group hairline-top">
-    <div class="w-12 h-12 rounded-2xl bg-tito-card border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-      <iconify-icon icon="solar:headphones-round-sound-linear" class="text-2xl text-white"></iconify-icon>
-    </div>
-    <h4 class="text-xl font-serif font-bold text-white mb-2 tracking-display">Suporte dedicado</h4>
-    <p class="text-sm text-tito-muted leading-relaxed">Onboarding guiado pela equipe Tito. Configuração e treinamento inclusos.</p>
-  </div>
-</div>
-
-<div class="flex justify-center pt-2">
-  <!-- White Solid com sheen (Apple-like) -->
-  <a href="#contato" class="group relative overflow-hidden flex items-center justify-center gap-2.5 rounded-full bg-white px-8 py-4 text-[15px] font-semibold text-black tracking-tight shadow-[0_8px_30px_-8px_rgba(255,255,255,0.35)] ring-1 ring-inset ring-black/5 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_10px_40px_-8px_rgba(255,255,255,0.5)] active:scale-[0.99] font-sans">
-    <span class="relative z-10">Falar com um especialista</span>
-    <iconify-icon icon="solar:arrow-right-up-linear" class="relative z-10 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></iconify-icon>
-    <span class="absolute top-0 bottom-0 w-1/3 bg-gradient-to-r from-transparent via-black/10 to-transparent opacity-0 group-hover:opacity-100" style="animation: sheen 1.1s cubic-bezier(0.16,1,0.3,1) infinite;"></span>
-  </a>
-</div>
+  <p class="mt-10 text-sm text-neutral-500 leading-relaxed max-w-3xl">
+    Todos os planos incluem app 100% white-label e onboarding assistido. Fale com a gente para uma proposta sob medida.
+  </p>
 </div>
 </section>
 
