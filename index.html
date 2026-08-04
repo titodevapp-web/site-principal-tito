@@ -88,6 +88,9 @@ body { background:#000; color:#FAFAFA; font-family:'Inter',sans-serif; overflow-
 .sec-white { position:relative; background:#FFFFFF; color:#0A0A0C; }
 /* Emenda suave entre o preto e as superfícies claras */
 .sec-light::before, .sec-white::before { content:""; position:absolute; left:0; right:0; top:-1px; height:1px; background:rgba(255,255,255,.10); }
+/* Duas dobras claras seguidas: sem isto elas viram um bloco branco só */
+.sec-light + .sec-light, .sec-light + .sec-white,
+.sec-white + .sec-light, .sec-white + .sec-white { border-top:1px solid rgba(0,0,0,.08); }
 
 /* ——— TIPOGRAFIA / GRADIENTES ——— */
 .text-gradient-light { background:linear-gradient(180deg,#FFFFFF 0%,#FAFAFA 40%,#8E8E93 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
@@ -579,7 +582,7 @@ body { background:#000; color:#FAFAFA; font-family:'Inter',sans-serif; overflow-
 </section>
 
 <!-- ══════════════ 4) FUNCIONALIDADES — escuro ══════════════ -->
-<section id="funcionalidades" class="sec-dark scroll-mt-24 pt-24 md:pt-32 pb-16 px-4 md:px-12 animate-on-scroll animate-fade-slide-in">
+<section id="funcionalidades" class="sec-dark scroll-mt-24 py-24 md:py-32 px-4 md:px-12 animate-on-scroll animate-fade-slide-in">
 <div class="max-w-7xl mx-auto space-y-10">
 <div class="border-b border-white/10 pb-6">
   <h2 class="text-sm text-tito-accent font-semibold uppercase tracking-widest mb-2">Funcionalidades</h2>
@@ -638,85 +641,85 @@ body { background:#000; color:#FAFAFA; font-family:'Inter',sans-serif; overflow-
 </div>
 </section>
 
-<!-- ══════════════ 5) COMO FUNCIONA — escuro ══════════════ -->
-<section id="como-funciona" class="sec-dark scroll-mt-24 pt-16 pb-24 md:pb-32 px-4 md:px-12 animate-on-scroll animate-fade-slide-in">
+<!-- ══════════════ 5) COMO FUNCIONA — dobra clara ══════════════ -->
+<section id="como-funciona" class="sec-white scroll-mt-24 py-24 md:py-32 px-4 md:px-12 animate-on-scroll animate-fade-slide-in">
 <div class="max-w-7xl mx-auto space-y-10">
-<div class="border-b border-white/10 pb-6">
-  <h2 class="text-sm text-tito-accent font-semibold uppercase tracking-widest mb-2">Como Funciona</h2>
-  <h3 class="text-4xl font-serif font-bold text-white tracking-display">O Tito em ação. <span class="italic font-normal">Cenários reais.</span></h3>
-  <p class="text-tito-muted text-base mt-2 max-w-2xl">Veja como o Tito organiza os fluxos mais importantes da vida da sua igreja.</p>
+<div class="border-b border-black/10 pb-6">
+  <h2 class="text-sm text-tito-accent_dark font-semibold uppercase tracking-widest mb-2">Como Funciona</h2>
+  <h3 class="text-4xl font-serif font-bold tracking-display">O Tito em ação. <span class="italic font-normal">Cenários reais.</span></h3>
+  <p class="text-neutral-600 text-base mt-2 max-w-2xl">Veja como o Tito organiza os fluxos mais importantes da vida da sua igreja.</p>
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-  <div class="glass-panel rounded-[32px] border border-white/5 p-7 hover-lift hairline-top">
+  <div class="card-paper p-7">
     <div class="flex items-center gap-3 mb-6">
-      <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-serif font-bold text-lg shrink-0">1</div>
-      <h4 class="text-lg font-serif font-bold text-white tracking-display">Receber um Visitante</h4>
+      <div class="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white font-serif font-bold text-lg shrink-0">1</div>
+      <h4 class="text-lg font-serif font-bold tracking-display">Receber um Visitante</h4>
     </div>
     <ol class="space-y-3">
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">Visitante preenche formulário de acolhida no app</span></li>
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">Admin recebe os dados no painel em tempo real</span></li>
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">CRM inicia jornada de boas-vindas no WhatsApp</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">Visitante preenche formulário de acolhida no app</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">Admin recebe os dados no painel em tempo real</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">CRM inicia jornada de boas-vindas no WhatsApp</span></li>
     </ol>
   </div>
 
-  <div class="glass-panel rounded-[32px] border border-white/5 p-7 hover-lift hairline-top">
+  <div class="card-paper p-7">
     <div class="flex items-center gap-3 mb-6">
-      <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-serif font-bold text-lg shrink-0">2</div>
-      <h4 class="text-lg font-serif font-bold text-white tracking-display">Discipular um Convertido</h4>
+      <div class="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white font-serif font-bold text-lg shrink-0">2</div>
+      <h4 class="text-lg font-serif font-bold tracking-display">Discipular um Convertido</h4>
     </div>
     <ol class="space-y-3">
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">Pastor adiciona à Jornada “Primeiros Passos”</span></li>
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">Membro recebe etapas guiadas: vídeo, mensagem, curso</span></li>
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">Pastor acompanha o progresso em tempo real</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">Pastor adiciona à Jornada “Primeiros Passos”</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">Membro recebe etapas guiadas: vídeo, mensagem, curso</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">Pastor acompanha o progresso em tempo real</span></li>
     </ol>
   </div>
 
-  <div class="glass-panel rounded-[32px] border border-white/5 p-7 hover-lift hairline-top">
+  <div class="card-paper p-7">
     <div class="flex items-center gap-3 mb-6">
-      <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-serif font-bold text-lg shrink-0">3</div>
-      <h4 class="text-lg font-serif font-bold text-white tracking-display">Gerenciar as Finanças</h4>
+      <div class="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white font-serif font-bold text-lg shrink-0">3</div>
+      <h4 class="text-lg font-serif font-bold tracking-display">Gerenciar as Finanças</h4>
     </div>
     <ol class="space-y-3">
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">Tesoureiro lança dízimo com categoria e conta</span></li>
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">Líder solicita compra — admin aprova com um clique</span></li>
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">Relatório mensal em PDF gerado automaticamente</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">Tesoureiro lança dízimo com categoria e conta</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">Líder solicita compra — admin aprova com um clique</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">Relatório mensal em PDF gerado automaticamente</span></li>
     </ol>
   </div>
 
-  <div class="glass-panel rounded-[32px] border border-white/5 p-7 hover-lift hairline-top">
+  <div class="card-paper p-7">
     <div class="flex items-center gap-3 mb-6">
-      <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-serif font-bold text-lg shrink-0">4</div>
-      <h4 class="text-lg font-serif font-bold text-white tracking-display">Organizar um Evento</h4>
+      <div class="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white font-serif font-bold text-lg shrink-0">4</div>
+      <h4 class="text-lg font-serif font-bold tracking-display">Organizar um Evento</h4>
     </div>
     <ol class="space-y-3">
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">Equipe cria o evento com vagas e notificação push</span></li>
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">60 inscrições em 2 dias — tudo rastreado em tempo real</span></li>
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">Check-in por QR Code ou lista exportada em PDF</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">Equipe cria o evento com vagas e notificação push</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">60 inscrições em 2 dias — tudo rastreado em tempo real</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">Check-in por QR Code ou lista exportada em PDF</span></li>
     </ol>
   </div>
 
-  <div class="glass-panel rounded-[32px] border border-white/5 p-7 hover-lift hairline-top">
+  <div class="card-paper p-7">
     <div class="flex items-center gap-3 mb-6">
-      <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-serif font-bold text-lg shrink-0">5</div>
-      <h4 class="text-lg font-serif font-bold text-white tracking-display">Cuidado Pastoral pelo CRM</h4>
+      <div class="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white font-serif font-bold text-lg shrink-0">5</div>
+      <h4 class="text-lg font-serif font-bold tracking-display">Cuidado Pastoral pelo CRM</h4>
     </div>
     <ol class="space-y-3">
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">Pessoa envia mensagem sobre aconselhamento</span></li>
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">IA identifica intenção pastoral, aciona humano</span></li>
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">Agendamento feito e confirmado por WhatsApp</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">Pessoa envia mensagem sobre aconselhamento</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">IA identifica intenção pastoral, aciona humano</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">Agendamento feito e confirmado por WhatsApp</span></li>
     </ol>
   </div>
 
-  <div class="glass-panel rounded-[32px] border border-white/5 p-7 hover-lift hairline-top">
+  <div class="card-paper p-7">
     <div class="flex items-center gap-3 mb-6">
-      <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black font-serif font-bold text-lg shrink-0">6</div>
-      <h4 class="text-lg font-serif font-bold text-white tracking-display">Engajar com Conteúdo</h4>
+      <div class="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white font-serif font-bold text-lg shrink-0">6</div>
+      <h4 class="text-lg font-serif font-bold tracking-display">Engajar com Conteúdo</h4>
     </div>
     <ol class="space-y-3">
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">Membro abre o app: devocional, sermão e plano</span></li>
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">Assiste sermão no caminho, completa aula do curso</span></li>
-      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-300 leading-relaxed">Ganha 50 pontos e sobe no ranking da comunidade</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">Membro abre o app: devocional, sermão e plano</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">Assiste sermão no caminho, completa aula do curso</span></li>
+      <li class="flex gap-3 text-sm"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-tito-accent_dark shrink-0 mt-0.5"></iconify-icon><span class="text-neutral-700 leading-relaxed">Ganha 50 pontos e sobe no ranking da comunidade</span></li>
     </ol>
   </div>
 </div>
@@ -844,35 +847,35 @@ body { background:#000; color:#FAFAFA; font-family:'Inter',sans-serif; overflow-
 </div>
 </section>
 
-<!-- ══════════════ 8) A ORIGEM DO NOME — escuro ══════════════ -->
-<section id="origem" class="sec-dark scroll-mt-24 py-24 md:py-32 px-4 md:px-12 overflow-hidden animate-on-scroll animate-fade-slide-in">
-<div class="absolute -right-24 -top-24 w-96 h-96 rounded-full pointer-events-none" style="background:rgba(249,115,22,0.10);filter:blur(90px);"></div>
+<!-- ══════════════ 8) A ORIGEM DO NOME — dobra clara ══════════════ -->
+<section id="origem" class="sec-white scroll-mt-24 py-24 md:py-32 px-4 md:px-12 overflow-hidden animate-on-scroll animate-fade-slide-in">
+<div class="absolute -right-24 -top-24 w-96 h-96 rounded-full pointer-events-none" style="background:rgba(249,115,22,0.07);filter:blur(80px);"></div>
 <div class="max-w-3xl mx-auto text-center relative z-10">
-  <h2 class="text-sm text-tito-accent font-semibold uppercase tracking-widest mb-8">A Origem do Nome</h2>
+  <h2 class="text-sm text-tito-accent_dark font-semibold uppercase tracking-widest mb-8">A Origem do Nome</h2>
 
   <svg viewBox="0 0 100 100" class="w-12 h-12 mx-auto mb-8" aria-label="Símbolo Tito App" role="img">
-    <path d="M 73.39 20.06 A 38 38 0 1 0 86.71 40.17" fill="none" stroke="#FAFAFA" stroke-width="7"/>
-    <rect x="24" y="33.5" width="60" height="9" fill="#FAFAFA"/>
-    <rect x="45.5" y="33.5" width="9" height="46.5" fill="#FAFAFA"/>
+    <path d="M 73.39 20.06 A 38 38 0 1 0 86.71 40.17" fill="none" stroke="#0A0A0C" stroke-width="7"/>
+    <rect x="24" y="33.5" width="60" height="9" fill="#0A0A0C"/>
+    <rect x="45.5" y="33.5" width="9" height="46.5" fill="#0A0A0C"/>
   </svg>
 
-  <blockquote class="text-2xl md:text-4xl font-serif italic leading-[1.35] tracking-display mb-5 text-gradient-light">
+  <blockquote class="text-2xl md:text-4xl font-serif italic leading-[1.35] tracking-display mb-5">
     “Para que pusesses em ordem as coisas que ainda restam, e constituísses presbíteros em cada cidade…”
   </blockquote>
-  <p class="text-sm font-semibold uppercase tracking-widest text-tito-accent mb-10">Tito 1:5</p>
+  <p class="text-sm font-semibold uppercase tracking-widest text-tito-accent_dark mb-10">Tito 1:5</p>
 
-  <p class="text-base md:text-lg text-tito-muted leading-relaxed mb-10">
-    O Tito foi nomeado em honra ao apóstolo enviado para <strong class="text-white font-medium">organizar o que ainda faltava</strong>.
+  <p class="text-base md:text-lg text-neutral-600 leading-relaxed mb-10">
+    O Tito foi nomeado em honra ao apóstolo enviado para <strong class="text-black font-semibold">organizar o que ainda faltava</strong>.
     Nossa missão é a mesma: organizar o backstage da sua igreja para que os líderes dediquem-se inteiramente às pessoas.
   </p>
 
-  <div class="inline-flex items-center gap-4 px-5 py-4 rounded-2xl glass-panel border border-white/5 text-left hairline-top">
-    <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 bg-tito-accent/10 border border-tito-accent/25">
-      <iconify-icon icon="solar:buildings-2-linear" class="text-xl text-tito-accent"></iconify-icon>
+  <div class="inline-flex items-center gap-4 px-5 py-4 rounded-2xl bg-tito-paper border border-black/[0.08] text-left">
+    <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0" style="background:rgba(249,115,22,0.10);border:1px solid rgba(249,115,22,0.25);">
+      <iconify-icon icon="solar:buildings-2-linear" class="text-xl text-tito-accent_dark"></iconify-icon>
     </div>
     <div>
-      <p class="text-sm font-medium text-white tracking-tight">Implementação Pioneira</p>
-      <p class="text-xs text-tito-dim mt-0.5 font-mono">app.igrejafamiliahazel.com.br</p>
+      <p class="text-sm font-semibold tracking-tight">Implementação Pioneira</p>
+      <p class="text-xs text-neutral-500 mt-0.5 font-mono">app.igrejafamiliahazel.com.br</p>
     </div>
   </div>
 </div>
@@ -949,61 +952,61 @@ body { background:#000; color:#FAFAFA; font-family:'Inter',sans-serif; overflow-
 </div>
 </section>
 
-<!-- ══════════════ 10) FAQ — dobra clara ══════════════ -->
-<section id="faq" class="sec-light scroll-mt-24 py-24 md:py-32 px-4 md:px-12 animate-on-scroll animate-fade-slide-in">
+<!-- ══════════════ 10) FAQ — escuro ══════════════ -->
+<section id="faq" class="sec-dark scroll-mt-24 py-24 md:py-32 px-4 md:px-12 animate-on-scroll animate-fade-slide-in">
 <div class="max-w-3xl mx-auto">
   <div class="text-center mb-14">
-    <h2 class="text-sm text-tito-accent_dark font-semibold uppercase tracking-widest mb-3">Perguntas Frequentes</h2>
-    <h3 class="text-3xl md:text-5xl font-serif font-bold tracking-display leading-[1.1]">Dúvidas? <span class="italic font-normal">A gente responde.</span></h3>
+    <h2 class="text-sm text-tito-accent font-semibold uppercase tracking-widest mb-3">Perguntas Frequentes</h2>
+    <h3 class="text-3xl md:text-5xl font-serif font-bold tracking-display leading-[1.1] text-white">Dúvidas? <span class="italic font-normal">A gente responde.</span></h3>
   </div>
 
   <div class="space-y-3">
-    <div class="faq-item card-paper overflow-hidden">
+    <div class="faq-item glass-panel rounded-[24px] border border-white/5 overflow-hidden transition-colors hover:border-white/15">
       <button class="faq-q w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
-        <span class="text-base font-semibold tracking-tight">O Tito pode substituir nosso WhatsApp, planilhas e formulários?</span>
-        <iconify-icon icon="solar:add-circle-linear" class="faq-icon shrink-0 text-xl text-tito-accent_dark"></iconify-icon>
+        <span class="text-base font-semibold tracking-tight text-white">O Tito pode substituir nosso WhatsApp, planilhas e formulários?</span>
+        <iconify-icon icon="solar:add-circle-linear" class="faq-icon shrink-0 text-xl text-tito-accent"></iconify-icon>
       </button>
-      <div class="faq-a"><div><p class="px-6 pb-6 text-sm text-neutral-600 leading-relaxed">Sim. O Tito centraliza gestão de membros, finanças, comunicação, eventos, conteúdo e fluxos pastorais em uma única plataforma, eliminando ferramentas genéricas dispersas.</p></div></div>
+      <div class="faq-a"><div><p class="px-6 pb-6 text-sm text-tito-muted leading-relaxed">Sim. O Tito centraliza gestão de membros, finanças, comunicação, eventos, conteúdo e fluxos pastorais em uma única plataforma, eliminando ferramentas genéricas dispersas.</p></div></div>
     </div>
 
-    <div class="faq-item card-paper overflow-hidden">
+    <div class="faq-item glass-panel rounded-[24px] border border-white/5 overflow-hidden transition-colors hover:border-white/15">
       <button class="faq-q w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
-        <span class="text-base font-semibold tracking-tight">O app vai aparecer com o nome “Tito” para os membros?</span>
-        <iconify-icon icon="solar:add-circle-linear" class="faq-icon shrink-0 text-xl text-tito-accent_dark"></iconify-icon>
+        <span class="text-base font-semibold tracking-tight text-white">O app vai aparecer com o nome “Tito” para os membros?</span>
+        <iconify-icon icon="solar:add-circle-linear" class="faq-icon shrink-0 text-xl text-tito-accent"></iconify-icon>
       </button>
-      <div class="faq-a"><div><p class="px-6 pb-6 text-sm text-neutral-600 leading-relaxed">Não. 100% white-label. Seus membros veem apenas o nome, logo e cores da sua igreja. O domínio é o da sua igreja. O Tito é a infraestrutura invisível por trás.</p></div></div>
+      <div class="faq-a"><div><p class="px-6 pb-6 text-sm text-tito-muted leading-relaxed">Não. 100% white-label. Seus membros veem apenas o nome, logo e cores da sua igreja. O domínio é o da sua igreja. O Tito é a infraestrutura invisível por trás.</p></div></div>
     </div>
 
-    <div class="faq-item card-paper overflow-hidden">
+    <div class="faq-item glass-panel rounded-[24px] border border-white/5 overflow-hidden transition-colors hover:border-white/15">
       <button class="faq-q w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
-        <span class="text-base font-semibold tracking-tight">Precisamos de um desenvolvedor para configurar o Tito?</span>
-        <iconify-icon icon="solar:add-circle-linear" class="faq-icon shrink-0 text-xl text-tito-accent_dark"></iconify-icon>
+        <span class="text-base font-semibold tracking-tight text-white">Precisamos de um desenvolvedor para configurar o Tito?</span>
+        <iconify-icon icon="solar:add-circle-linear" class="faq-icon shrink-0 text-xl text-tito-accent"></iconify-icon>
       </button>
-      <div class="faq-a"><div><p class="px-6 pb-6 text-sm text-neutral-600 leading-relaxed">Não. O onboarding é conduzido pela nossa equipe. O painel é projetado para não-técnicos. Pastores, secretárias e tesoureiros operam tudo sem conhecimento técnico.</p></div></div>
+      <div class="faq-a"><div><p class="px-6 pb-6 text-sm text-tito-muted leading-relaxed">Não. O onboarding é conduzido pela nossa equipe. O painel é projetado para não-técnicos. Pastores, secretárias e tesoureiros operam tudo sem conhecimento técnico.</p></div></div>
     </div>
 
-    <div class="faq-item card-paper overflow-hidden">
+    <div class="faq-item glass-panel rounded-[24px] border border-white/5 overflow-hidden transition-colors hover:border-white/15">
       <button class="faq-q w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
-        <span class="text-base font-semibold tracking-tight">O Tito funciona como app no celular?</span>
-        <iconify-icon icon="solar:add-circle-linear" class="faq-icon shrink-0 text-xl text-tito-accent_dark"></iconify-icon>
+        <span class="text-base font-semibold tracking-tight text-white">O Tito funciona como app no celular?</span>
+        <iconify-icon icon="solar:add-circle-linear" class="faq-icon shrink-0 text-xl text-tito-accent"></iconify-icon>
       </button>
-      <div class="faq-a"><div><p class="px-6 pb-6 text-sm text-neutral-600 leading-relaxed">Sim — como PWA (instalável sem App Store) e como app nativo iOS/Android via Capacitor, com push nativo, haptic feedback e tudo que um app nativo oferece.</p></div></div>
+      <div class="faq-a"><div><p class="px-6 pb-6 text-sm text-tito-muted leading-relaxed">Sim — como PWA (instalável sem App Store) e como app nativo iOS/Android via Capacitor, com push nativo, haptic feedback e tudo que um app nativo oferece.</p></div></div>
     </div>
 
-    <div class="faq-item card-paper overflow-hidden">
+    <div class="faq-item glass-panel rounded-[24px] border border-white/5 overflow-hidden transition-colors hover:border-white/15">
       <button class="faq-q w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
-        <span class="text-base font-semibold tracking-tight">Há inteligência artificial no Tito?</span>
-        <iconify-icon icon="solar:add-circle-linear" class="faq-icon shrink-0 text-xl text-tito-accent_dark"></iconify-icon>
+        <span class="text-base font-semibold tracking-tight text-white">Há inteligência artificial no Tito?</span>
+        <iconify-icon icon="solar:add-circle-linear" class="faq-icon shrink-0 text-xl text-tito-accent"></iconify-icon>
       </button>
-      <div class="faq-a"><div><p class="px-6 pb-6 text-sm text-neutral-600 leading-relaxed">Sim. O CRM inclui IA generativa para triagem empática de pedidos pastorais — oração, assistência, aconselhamento — com prompts configuráveis e repasse para humano.</p></div></div>
+      <div class="faq-a"><div><p class="px-6 pb-6 text-sm text-tito-muted leading-relaxed">Sim. O CRM inclui IA generativa para triagem empática de pedidos pastorais — oração, assistência, aconselhamento — com prompts configuráveis e repasse para humano.</p></div></div>
     </div>
 
-    <div class="faq-item card-paper overflow-hidden">
+    <div class="faq-item glass-panel rounded-[24px] border border-white/5 overflow-hidden transition-colors hover:border-white/15">
       <button class="faq-q w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
-        <span class="text-base font-semibold tracking-tight">Os dados dos membros são seguros?</span>
-        <iconify-icon icon="solar:add-circle-linear" class="faq-icon shrink-0 text-xl text-tito-accent_dark"></iconify-icon>
+        <span class="text-base font-semibold tracking-tight text-white">Os dados dos membros são seguros?</span>
+        <iconify-icon icon="solar:add-circle-linear" class="faq-icon shrink-0 text-xl text-tito-accent"></iconify-icon>
       </button>
-      <div class="faq-a"><div><p class="px-6 pb-6 text-sm text-neutral-600 leading-relaxed">Sim. Isolamento total via Row Level Security (RLS) no PostgreSQL. Cada igreja tem sua própria bolha de dados com zero possibilidade de vazamento. Infraestrutura Supabase + Vercel.</p></div></div>
+      <div class="faq-a"><div><p class="px-6 pb-6 text-sm text-tito-muted leading-relaxed">Sim. Isolamento total via Row Level Security (RLS) no PostgreSQL. Cada igreja tem sua própria bolha de dados com zero possibilidade de vazamento. Infraestrutura Supabase + Vercel.</p></div></div>
     </div>
   </div>
 </div>
@@ -1113,12 +1116,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Saltos por âncora pulam seções inteiras — o observer nunca as vê.
      Revela tudo que já ficou acima da dobra para não deixar buraco em branco. */
+  let pending = [...document.querySelectorAll(".animate-on-scroll")];
   const revealPassed = () => {
-    document.querySelectorAll(".animate-on-scroll:not(.animate)").forEach((el) => {
-      if (el.getBoundingClientRect().top < window.innerHeight) {
-        el.classList.add("animate");
-        observer.unobserve(el);
-      }
+    if (!pending.length) return;               // acabou: nada a fazer por scroll
+    pending = pending.filter((el) => {
+      if (el.classList.contains("animate")) return false;
+      if (el.getBoundingClientRect().top >= window.innerHeight) return true;
+      el.classList.add("animate");
+      observer.unobserve(el);
+      return false;
     });
   };
   window.addEventListener("hashchange", () => setTimeout(revealPassed, 60));
@@ -1139,7 +1145,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ——— Nav: estado ao rolar ——— */
   const nav = document.getElementById("site-nav");
-  const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 40);
+  const onScroll = () => {
+    nav.classList.toggle("scrolled", window.scrollY > 40);
+    /* Saltos de rolagem (scrollIntoView, restauração de posição, teclado) não
+       disparam hashchange e podem pular seções inteiras. Aqui nada fica oculto. */
+    revealPassed();
+  };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
